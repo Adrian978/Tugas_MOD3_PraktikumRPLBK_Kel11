@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
+import Kasir from "./Components/Kasir";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <header>
+          <div className="title">
+            <p>Kelompok 11</p>
+          </div>
+          <nav>
+            <Link className="text" to="/">
+              Menu Kasir
+            </Link>
+          </nav>
+        </header>
+        <Switch>
+          <Route path="/" exact component={Kasir} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
