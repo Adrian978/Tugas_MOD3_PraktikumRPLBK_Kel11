@@ -81,17 +81,6 @@ class Menu extends Component {
         this.setState({ cartTotal: total });
     };
 
-    onResetHandler = () => {
-        var cloneItems = [...this.state.items];
-        for (var i = 0; i <= cloneItems.length - 1; i++) {
-            cloneItems[i].quantity = 0;
-        }
-
-        this.setState({ items: cloneItems });
-        this.setState({ cartTotal: 0 });
-        this.setState({ cartItemsCount: 0 });
-    };
-
     itemsCount = () => {
         var countItems = this.state.items.reduce(
             (total, item) => total + item.quantity,
